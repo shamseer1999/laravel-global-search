@@ -16,7 +16,7 @@ class AlterUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('fk_department')->after('phone_number');
             $table->foreign('fk_department')->references('id')->on('departments');
-            $table->unsignedBigInteger('fk_dsignation')->after('fk_department');
+            $table->unsignedBigInteger('fk_designation')->after('fk_department');
             $table->foreign('fk_designation')->references('id')->on('designations');
         });
     }

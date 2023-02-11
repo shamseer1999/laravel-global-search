@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['GET','POST'],'/',[EmployeeController::class,'index'])->name('home');
+Route::get('/search',[EmployeeController::class,'search'])->name('search');
