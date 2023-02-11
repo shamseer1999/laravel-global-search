@@ -7,10 +7,10 @@
     </div>
     <div class="card-body">
         <div class="form-outline">
-            <form action="">
+            
                 @csrf
             <input type="text" value="" name="search" id="form1" class="form-control" placeholder="Search name/designation/department" aria-label="Search" onchange="get_result()" />
-        </form>
+        
         </div>
         <div class="card-body" id="display">
             <div class="row" id="hidden" style="display:none;"></div>
@@ -45,7 +45,7 @@
        $.ajax({
         url:"{{route('search')}}",
         method:'GET',
-        data:{search:search,"_token":"{{csrf_token()}}"},
+        data:{search:search},
         success:function(data){
             out=JSON.parse(data)
             console.log(out)
