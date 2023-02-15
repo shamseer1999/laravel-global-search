@@ -41,8 +41,8 @@
         if(search =='')
         {
             location.reload();
-        }
-       $.ajax({
+        }else{
+            $.ajax({
         url:"{{route('search')}}",
         method:'GET',
         data:{search:search},
@@ -64,6 +64,8 @@
            
         }
        });
+        }
+       
     }
   </script>
 @endsection

@@ -29,7 +29,9 @@ class AlterUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_fk_department_foreign');
             $table->dropColumn('fk_department');
+            $table->dropForeign('users_fk_designation_foreign');
             $table->dropColumn('fk_designation');
         });
     }
